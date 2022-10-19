@@ -77,8 +77,7 @@ KOR: 6, 19
 const parserFiguritas = (str) => {
   const startStr = str.indexOf("FWC");
   const data = str.substring(startStr + 1).split("\n");
-  const map = new Map();
-  return data.map((keyAndValueStr) => keyAndValueStr.split(":")).map((pair) => [pair[0], pair[1].map((x) => )]);
+  return new Map(data.map((keyAndValueStr) => keyAndValueStr.split(":")).map((pair) => [pair[0], pair[1].split(",").map((x) => x.trim())]));
 };
 // Log to console
 console.log("MeFaltan:")
